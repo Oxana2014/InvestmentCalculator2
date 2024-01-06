@@ -1,6 +1,7 @@
 import { formatter } from "../util/investment";
 
-export default function ResultTable({ result }) {
+export default function ResultTable({ userInput}) {
+    console.log(userInput)
   let content = <p className="center">No data calculated</p>;
   if (result && result.length > 0) {
     content = (
