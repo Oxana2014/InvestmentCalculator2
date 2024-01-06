@@ -1,38 +1,40 @@
 import { useState } from "react";
 import InputGroup from "./InputGroup";
 
-export default function UserInput() {
+export default function UserInput({calculate}) {
   const [userInput, setUserInput] = useState({
-    "initial-investment": 10000,
-    "annual-investment": 1000,
-    "expected-return": 6,
+    "initialInvestment": 10000,
+    "annualInvestment": 1000,
+    "expectedReturn": 6,
     duration: 10,
   });
   function handleInputs(input, value) {
 setUserInput(prevUserInput => {
 const currentUserInput = {...prevUserInput, [input] : value}
 console.log(currentUserInput)
+calculate(currentUserInput)
 return currentUserInput
 })
+
   }
   return (
     <div id="user-input">
       <InputGroup
         label="INITIAL INVESTMENT"
-        id="initial-investment"
-        value={userInput["initial-investment"]}
+        id="initialInvestment"
+        value={userInput["initialInvestment"]}
         onChange={handleInputs}
       />
       <InputGroup
         label="ANNUAL INVESTMENT"
-        id="annual-investment"
-        value={userInput["annual-investment"]}
+        id="annualInvestment"
+        value={userInput["annualInvestment"]}
         onChange={handleInputs}
       />
       <InputGroup
         label="EXPECTED RETURN"
-        id="expected-return"
-        value={userInput["expected-return"]}
+        id="expectedReturn"
+        value={userInput["expectedReturn"]}
         onChange={handleInputs}
       />
       <InputGroup

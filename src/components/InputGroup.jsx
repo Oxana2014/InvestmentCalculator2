@@ -8,7 +8,7 @@ export default function InputGroup({ label, id, value, onChange }) {
   return (
     <div className="input-group ">
       <label htmlFor={id}>{label}</label>
-      <input type="number" id={id} onChange={ handleInput} value={value} min='1' />
+      <input type="number" id={id} onChange={ handleInput} value={value} min='0' />
     </div>
   );
 }
