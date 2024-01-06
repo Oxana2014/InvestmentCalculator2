@@ -6,9 +6,9 @@ export default function InputGroup({ label, id, value, onChange }) {
     onChange(id, event.target.value);
   }
   return (
-    <div className="input-group ">
+    <p >
       <label htmlFor={id}>{label}</label>
-      <input type="number" id={id} onChange={ handleInput} value={value} min='0' />
-    </div>
+      <input type="number" id={id} required onChange={ handleInput} value={value} min='0' />
+    </p>
   );
 }

@@ -18,7 +18,8 @@ return currentUserInput
 
   }
   return (
-    <div id="user-input">
+    <section id="user-input">
+    <div className="input-group">
       <InputGroup
         label="INITIAL INVESTMENT"
         id="initialInvestment"
@@ -31,6 +32,8 @@ return currentUserInput
         value={userInput["annualInvestment"]}
         onChange={handleInputs}
       />
+      </div >
+      <div className="input-group">
       <InputGroup
         label="EXPECTED RETURN"
         id="expectedReturn"
@@ -44,5 +47,6 @@ return currentUserInput
         onChange={ handleInputs}
       />
     </div>
+    </section>
   );
 }
